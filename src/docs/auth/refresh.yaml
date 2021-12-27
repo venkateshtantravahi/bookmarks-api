@@ -1,0 +1,21 @@
+Refresh Access key
+---
+tags:
+  - Authentication
+
+parameters:
+  - name: Authorization token
+    description: The bearer token should contain the refresh token 
+    in: header
+    required: true
+    schema:
+      type: token
+      required:
+        "refresh token"
+      
+responses:
+  200:
+    description: Returns a new access key to keep user logged in.
+
+  422:
+    description: Unproccessable token 

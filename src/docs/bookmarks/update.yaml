@@ -1,0 +1,19 @@
+updates bookmark with  new content 
+---
+tags:
+  - Bookmarks
+
+parameters:
+  - in: header
+    name: Authorization
+    required: true
+
+responses:
+  200:
+    description: When bookmark updates correctly
+  
+  400:
+    description: Invalid URL
+
+  404:
+    description: URL not found

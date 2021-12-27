@@ -1,0 +1,11 @@
+for user authentication using flask-jwt
+->we can use sessions to manage users in case of web but we can't handle them in case of mobile app
+for such thing we are using token based authentication 
+such that every logged in user gets token so that we can uniquely identify which user it is depending on token send to us
+-> before we used to maintain some table to save tokens which used to make us lifting heavier
+but jwt has made liftng easy by giving us a token and secret key , we can decode the user by using respective
+secret key for tokens and keep the users active in sessions.
+--> install using : pip install flask-jwt-extended
+
+-->heroku deployment 
+1. first install gunicorn
