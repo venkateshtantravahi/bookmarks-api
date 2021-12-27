@@ -1,0 +1,19 @@
+deletes bookmark from db using bookmark_id
+---
+tags:
+  - Bookmarks
+
+parameters:
+  - in: header
+    name: Authorization
+    required: true
+
+responses:
+  204:
+    description: after deletion no content response
+
+  404:
+    description: When Item not found
+  
+  401:
+    description: Unauthorized (Token Expired)

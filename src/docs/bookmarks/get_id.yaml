@@ -1,0 +1,19 @@
+Gets bookmark by using its id from table
+---
+tags:
+  - Bookmarks
+
+parameters:
+  - in: header
+    name: Authorization
+    required: true
+
+responses:
+  200:
+    description: when you get requested bookmarks
+
+  404:
+    description: When Item not found
+
+  401:
+    description: Unauthorized (Token Expired)

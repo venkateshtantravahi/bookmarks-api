@@ -1,0 +1,51 @@
+displays all the bookmarks from db 
+---
+tags:
+  - Bookmarks
+parameters:
+  - name: access_token 
+    description: access token generated at user login time
+    in: auth 
+    required: true
+    schema:
+      type: object
+      required: 
+        - "token"
+      properties:
+        token:
+          type: "JSON object"
+          example: "access: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MDI3NDM5NiwianRpIjoiMmU3MWE4M2YtYjMyMC00ODZlLWExOTctYTU1ZGM0MTY1YWU1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjQwMjc0Mzk2LCJleHAiOjE2NDAyNzUyOTZ9.0srygbcSkf3-fKhM0H-xpYG2iqGXmlN7af6U9u2ahcA"
+  - name: page
+    description: response in number of pages
+    in: auth 
+    optional: true
+    schema:
+      type: number
+      required:
+        - number
+      properties:
+        number:
+          type: "int"
+          example: 1
+  - name: per_page
+    description: number of objects or bookmarks per page to be displayed
+    in: auth 
+    optional: true
+    schema:
+      type: number
+      required:
+        - number
+      properties:
+        number:
+          type: "int"
+          example: 5
+
+responses:
+  200:
+    description: displays all bookmarks from db with meta data 
+
+  404:
+    description: When unable to retrieve bookmarks
+
+  401:
+    description: Unauthorized (Token Expired)

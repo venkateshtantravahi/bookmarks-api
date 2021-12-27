@@ -1,0 +1,38 @@
+Post Bookmark
+---
+tags:
+  - Bookmarks
+
+parameters:
+  - in: header
+    name: Authorization
+    required: true
+  - name: body
+    description: The body should contain the user posting bookmark data
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "url"
+        - "body"
+      properties:
+        url:
+          type: "url"
+          example: "www.google.com"
+        body:
+          type: "string"
+          example: "Google"
+
+responses:
+  201:
+    description: Bookmark created
+
+  404:
+    description: When unable to post bookmarks
+
+  401:
+    description: Unauthorized (Token Expired)
+  
+  500:
+    description: Internal Server error
